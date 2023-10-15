@@ -1,5 +1,7 @@
 package domain;
 
+import services.ExtractorInfoNodos;
+
 import java.util.List;
 
 public class Industria extends Nodo{
@@ -16,7 +18,7 @@ public class Industria extends Nodo{
     }
 
     @Override
-    String aplicarAlgoritmo() {
-        return null;
+    String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
+        return extractor.obtenerInfoNodoIndustria(this);
     }
 }

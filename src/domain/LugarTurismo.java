@@ -1,5 +1,7 @@
 package domain;
 
+import services.ExtractorInfoNodos;
+
 import java.util.List;
 
 public class LugarTurismo extends Nodo{
@@ -17,7 +19,7 @@ public class LugarTurismo extends Nodo{
     }
 
     @Override
-    String aplicarAlgoritmo() {
-        return null;
+    String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
+        return extractor.obtenerInfoNodoLugarTurismo(this);
     }
 }

@@ -1,15 +1,17 @@
 package domain;
 
+import services.ExtractorInfoNodos;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-abstract public class Nodo<T> {
-    protected T estadoComun;
+abstract public class Nodo {
+    protected String estadoComun;
     private List<Enlace> enlaces;
 
-    Nodo(T estadoComun){
+    Nodo(String estadoComun){
         this.estadoComun = estadoComun;
         this.enlaces = new ArrayList<>();
     }
@@ -24,5 +26,5 @@ abstract public class Nodo<T> {
 
     abstract String funcInfoGeo();
 
-    abstract String aplicarAlgoritmo();
+    abstract String aplicarAlgoritmo(ExtractorInfoNodos extractor);
 }
