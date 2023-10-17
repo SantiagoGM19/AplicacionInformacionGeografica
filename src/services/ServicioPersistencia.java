@@ -10,19 +10,18 @@ public class ServicioPersistencia {
      * En un proyecto real por supuesto la implementación sería distinta.
      * */
     public Grafo obtenerMapa(){
-        Grafo grafo = new Grafo();
-        Nodo ciudad =  new Ciudad("USA", "New York");
-        Nodo industria = new Industria("USA", "Fabrica textil");
-        Nodo lugarTurismo = new LugarTurismo("USA", "Gran cañon");
-        grafo.agregarNodo(ciudad);
-        grafo.agregarNodo(industria);
-        grafo.agregarNodo(lugarTurismo);
-        Enlace enlace1 = new Enlace(ciudad, industria);
-        Enlace enlace2 = new Enlace(ciudad, lugarTurismo);
-        Enlace enlace3 =  new Enlace(lugarTurismo, industria);
-        grafo.agregarEnlace(enlace1);
-        grafo.agregarEnlace(enlace2);
-        grafo.agregarEnlace(enlace3);
-        return grafo;
+        try{
+            Grafo grafo = new Grafo();
+            Nodo nodo1 = grafo.agregarNodo("ciudad", "USA", "New York");
+            Nodo nodo2 = grafo.agregarNodo("industria", "USA", "Fabrica textil");
+            Nodo nodo3 = grafo.agregarNodo("lugarTurismo", "USA", "Gran cañon");
+            grafo.agregarEnlace(nodo1, nodo2);
+            grafo.agregarEnlace(nodo1, nodo3);
+            grafo.agregarEnlace(nodo2, nodo3);
+            return grafo;
+        }catch (Error e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 }

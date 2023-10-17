@@ -5,11 +5,8 @@ import services.ServicioExportacion;
 
 public class Cliente {
     public static void main(String[] args) {
-        CreadorDeConvertidor creadorDeConvertidor = new CreadorDeConvertidor();
-        Grafo grafo = new Grafo();
-        Convertidor convertidorXml = creadorDeConvertidor.crearConvertidor("xml");
-        ServicioExportacion servicioExportacion = new ServicioExportacion(convertidorXml);
-        String formato = servicioExportacion.exportar(grafo);
+        ServicioExportacion servicioExportacion = new ServicioExportacion();
+        String formato = servicioExportacion.exportarAFormato("xml");
         System.out.println(formato);
     }
 }

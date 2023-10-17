@@ -2,6 +2,7 @@ package domain;
 
 import services.ExtractorInfoNodos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ciudad extends Nodo{
@@ -14,8 +15,13 @@ public class Ciudad extends Nodo{
     }
 
     @Override
-    String funcInfoGeo() {
-        return null;
+    public List<String> funcInfoGeo() {
+        List<String> infoCiudad = new ArrayList<>();
+        infoCiudad.add("Ciudad");
+        infoCiudad.add(estadoComun);
+        infoCiudad.add(estadoEspecifico);
+        infoCiudad.add("repite una letra");
+        return infoCiudad;
     }
 
     @Override

@@ -21,10 +21,14 @@ public class ServicioExportacion {
         Convertidor convertidorFormato =  creadorDeConvertidor.crearConvertidor(formato);
         extractorInfoNodos.setConvertidor(convertidorFormato);
         Grafo grafo = new ServicioPersistencia().obtenerMapa();
-        List<Nodo> nodos = iteradorGrafo.iterarGrafo(grafo);
-        for (Nodo nodo:nodos) {
-            nodo.aplicarAlgoritmo(extractorInfoNodos);
+        if(grafo != null){
+            List<Nodo> nodos = iteradorGrafo.iterarGrafo(grafo);
+            StringBuilder formatoBuilder = new StringBuilder();
+            for (Nodo nodo:nodos) {
+                formatoBuilder.append(nodo.aplicarAlgoritmo(extractorInfoNodos));
+            }
+            return formatoBuilder.toString();
         }
-        return "";
+        return "Formato vacio";
     }
 }

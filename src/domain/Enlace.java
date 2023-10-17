@@ -8,6 +8,14 @@ public class Enlace {
         this.origen = origen;
         this.destino = destino;
         this.origen.agregarEnlace(this);
-        this.destino.agregarEnlace(this);
     }
+
+    public Nodo getOrigen() {
+        return origen;
+    }
+
+    public Nodo getDestino() {
+        return destino;
+    }
+
 }

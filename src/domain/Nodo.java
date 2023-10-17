@@ -24,7 +24,7 @@ abstract public class Nodo {
         return enlaces;
     }
 
-    abstract String funcInfoGeo();
+    public abstract List<String> funcInfoGeo();
 
     public abstract String aplicarAlgoritmo(ExtractorInfoNodos extractor);
 }
