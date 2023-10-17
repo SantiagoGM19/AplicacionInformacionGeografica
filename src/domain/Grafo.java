@@ -9,8 +9,16 @@ public class Grafo {
     private List<Nodo> nodos;
 
     public Grafo() {
-        this.nodos = new ArrayList<>(List.of(new Ciudad("USA", "New York"), new Industria("USA","Fabrica textil"), new LugarTurismo("USA", "Gran cañon")));
-        this.enlaces = enlaces;
+        this.nodos = new ArrayList<>();
+        this.enlaces = new ArrayList<>();
+    }
+
+    public void agregarNodo(Nodo nodo){
+        this.nodos.add(nodo);
+    }
+
+    public void agregarEnlace(Enlace enlace){
+        this.enlaces.add(enlace);
     }
 
     public List<Enlace> getEnlaces() {

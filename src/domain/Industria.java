@@ -7,7 +7,7 @@ import java.util.List;
 public class Industria extends Nodo{
     private String estadoEspecifico;
 
-    Industria(String estadoComun, String estadoEspecifico) {
+    public Industria(String estadoComun, String estadoEspecifico) {
         super(estadoComun);
         this.estadoEspecifico = estadoEspecifico;
     }
@@ -18,7 +18,7 @@ public class Industria extends Nodo{
     }
 
     @Override
-    String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
-        return extractor.obtenerInfoNodoIndustria(this);
+    public String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
+        return extractor.exportarInfoNodoIndustria(this);
     }
 }

@@ -4,16 +4,21 @@ import domain.Nodo;
 
 public class ExtractorInfoNodos {
 
-    public String obtenerInfoNodoCiudad(Nodo nodo){
+    private Convertidor convertidor;
+
+    public String exportarInfoNodoCiudad(Nodo nodo){
         return "";
     }
 
-    public String obtenerInfoNodoIndustria(Nodo nodo){
+    public String exportarInfoNodoIndustria(Nodo nodo){
         return "";
     }
 
-    public String obtenerInfoNodoLugarTurismo(Nodo nodo){
+    public String exportarInfoNodoLugarTurismo(Nodo nodo){
         return "";
     }
 
+    public void setConvertidor(Convertidor convertidor) {
+        this.convertidor = convertidor;
+    }
 }

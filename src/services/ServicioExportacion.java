@@ -7,17 +7,24 @@ import java.util.List;
 
 public class ServicioExportacion {
 
-    private Convertidor convertidorFormato;
+    private ExtractorInfoNodos extractorInfoNodos;
+    private CreadorDeConvertidor  creadorDeConvertidor;
+    private IteradorGrafo iteradorGrafo;
 
-    public ServicioExportacion(Convertidor convertidor){
-        this.convertidorFormato = convertidor;
+    public ServicioExportacion(){
+        extractorInfoNodos =  new ExtractorInfoNodos();
+        creadorDeConvertidor =  new CreadorDeConvertidor();
+        iteradorGrafo = new IteradorGrafo();
     }
 
-    public String exportar(Grafo grafo){
+    public String exportarAFormato(String formato){
+        Convertidor convertidorFormato =  creadorDeConvertidor.crearConvertidor(formato);
+        extractorInfoNodos.setConvertidor(convertidorFormato);
+        Grafo grafo = new ServicioPersistencia().obtenerMapa();
+        List<Nodo> nodos = iteradorGrafo.iterarGrafo(grafo);
+        for (Nodo nodo:nodos) {
+            nodo.aplicarAlgoritmo(extractorInfoNodos);
+        }
         return "";
-    }
-
-    public List<Nodo> iterarGrafo(Grafo grafo){
-        return List.of();
     }
 }

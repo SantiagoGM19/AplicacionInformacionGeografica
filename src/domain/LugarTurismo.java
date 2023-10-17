@@ -8,7 +8,7 @@ public class LugarTurismo extends Nodo{
 
     private String estadoEspecifico;
 
-    LugarTurismo(String estadoComun, String estadoEspecifico) {
+    public LugarTurismo(String estadoComun, String estadoEspecifico) {
         super(estadoComun);
         this.estadoEspecifico = estadoEspecifico;
     }
@@ -19,7 +19,7 @@ public class LugarTurismo extends Nodo{
     }
 
     @Override
-    String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
-        return extractor.obtenerInfoNodoLugarTurismo(this);
+    public String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
+        return extractor.exportarInfoNodoLugarTurismo(this);
     }
 }

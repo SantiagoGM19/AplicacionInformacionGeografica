@@ -8,7 +8,7 @@ public class Ciudad extends Nodo{
 
     private String estadoEspecifico;
 
-    Ciudad(String estadoComun, String estadoEspecifico) {
+    public Ciudad(String estadoComun, String estadoEspecifico) {
         super(estadoComun);
         this.estadoEspecifico = estadoEspecifico;
     }
@@ -19,7 +19,7 @@ public class Ciudad extends Nodo{
     }
 
     @Override
-    String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
-        return extractor.obtenerInfoNodoCiudad(this);
+    public String aplicarAlgoritmo(ExtractorInfoNodos extractor) {
+        return extractor.exportarInfoNodoCiudad(this);
     }
 }
